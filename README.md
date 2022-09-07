@@ -52,6 +52,8 @@ Redirects you to the address that :shortcode is pointing to
 Show the 100 most frequently visited sites
   
 ### `GET /api/v1/stats`
+
+```json
 [
   {
     "title": "Sidekiq In Rails: Native Worker & ActiveJob, Who’s The Winner?",
@@ -61,4 +63,4 @@ Show the 100 most frequently visited sites
   }
   ...
 ]
-
+```
