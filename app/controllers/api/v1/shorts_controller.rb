@@ -2,6 +2,7 @@ class Api::V1::ShortsController < ApplicationController
   def create
     @short = Short.new(short_params)
     if @short.save!
+      ScraperJob.perform_later(@short.url, @short.id)
       json_response(@short.shortcode, :created)
     end
   end
