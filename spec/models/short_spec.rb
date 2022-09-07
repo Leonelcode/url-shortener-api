@@ -1,7 +1,9 @@
 require 'rails_helper'
+require 'support/shared_factories'
 
 RSpec.describe Short, type: :model do
-  
+  include_context 'shared factories'
+
   describe 'shortlink' do
     # checks if url is present
     it { should validate_presence_of(:url)}
@@ -17,4 +19,5 @@ RSpec.describe Short, type: :model do
       expect(short.valid_preferential_shortcode?(:shortcode)).to eq true
     end
   end
+
 end

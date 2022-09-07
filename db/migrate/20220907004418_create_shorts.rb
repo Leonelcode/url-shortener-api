@@ -5,7 +5,7 @@ class CreateShorts < ActiveRecord::Migration[7.0]
       t.string :url
       t.string :shortcode
       t.datetime :start_date
-      t.integer :visit_count
+      t.integer :visit_count, default: 0
       t.datetime :last_seen_date
 
       t.timestamps

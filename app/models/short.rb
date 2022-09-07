@@ -6,6 +6,12 @@ class Short < ApplicationRecord
   before_create { generate_shortcode(:shortcode) }
 	before_save :url_encode_date
 
+  def update_from_endpoint
+    self.visit_count += 1
+    self.last_seen_date = DateTime.now.in_time_zone('UTC').iso8601
+    self.save!
+  end
+  
   def generate_shortcode(shortcode)
     return if valid_preferential_shortcode?(shortcode)
     loop do

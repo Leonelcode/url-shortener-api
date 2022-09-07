@@ -1,7 +1,9 @@
 require 'spec_helper'
 require 'rails_helper'
+require 'support/shared_factories'
 
 RSpec.describe 'Shorts', type: :request do
+  include_context 'shared factories'
 
   describe 'POST /short' do
     context 'tries to create a new short' do

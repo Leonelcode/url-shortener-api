@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_004418) do
     t.string "url"
     t.string "shortcode"
     t.datetime "start_date"
-    t.integer "visit_count"
+    t.integer "visit_count", default: 0
     t.datetime "last_seen_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
