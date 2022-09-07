@@ -6,6 +6,16 @@ class Api::V1::ShortsController < ApplicationController
     end
   end
 
+  def fetch_short
+    @short = Short.find_by_shortcode!(params[:shortcode])
+    json_response(@short.shortcode, 302, @short.url)
+    update_stats_redirect_count
+  end
+
+  def stats
+    @shorts = Short.top_100
+    json_response(@shorts, 302)
+  end
   private
 
   def update_stats_redirect_count
