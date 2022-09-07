@@ -17,8 +17,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'responders'
 gem 'rubocop'
 
-# Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+# Background Job
+gem 'sidekiq'
+gem 'httparty'
+gem 'nokogiri'
+gem 'sinatra'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
