@@ -17,6 +17,7 @@ class Api::V1::ShortsController < ApplicationController
     @shorts = Short.top_100
     json_response(@shorts, 302)
   end
+
   private
 
   def update_stats_redirect_count
