@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "faker"
+
+150.times do
+	short = Short.new(:title => Faker::Internet.unique.domain_word, :url => Faker::Internet.unique.url, :visit_count => SecureRandom.random_number(100))
+	short.save
+end
